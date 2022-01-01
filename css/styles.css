@@ -51,7 +51,9 @@ Global Styles
 ===============
 */
 
-* {
+*,
+::before,
+::after {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -147,6 +149,35 @@ p {
    background: var(--clr-primary-8);
 }
 
+.section {
+   padding: 5rem 0;
+}
+
+.section-title {
+   text-align: center;
+   margin-bottom: 4rem;
+}
+
+.section-title h2 {
+   text-transform: uppercase;
+}
+
+.section-title span {
+   color: var(--clr-primary-5);
+}
+
+.section-center {
+   width: 90%;
+   margin: 0 auto;
+   max-width: 1170px;
+}
+
+@media screen and (min-width: 992px) {
+   .section-center {
+      width: 95vw;
+   }
+}
+
 /*
 =============== 
 Navbar
@@ -219,6 +250,47 @@ About
 /* section add to globals */
 /* title add to globals */
 /* section center add to globals */
+
+.about-img,
+.about-info {
+   margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 992px) {
+   .about-center {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+   }
+
+   .about-img,
+   .about-info {
+      /* grow shrink base ( pa poder dejar un margen entre ellos de 2rem, con el space-between de arriba ) */
+      flex: 0 0 calc(50% - 2rem);
+      margin-bottom: 0;
+      align-self: center;
+   }
+}
+
+/* el before no se puede poner el un img container, por eso a las imagenes se les puso un contenedor, el before tiene q llevar prop content ( por más q sea vacia ), y como va a ser con position absolute => al .about-img ( q es el parent ) tiene q llevar el relative */
+/* para q el borde quede del mismo tamaño q la imagen HAY q poner en border-box ( en el box-sizing ) al before element, x eso en el reseteo global hay q poner el before y after junto con el * donde se pone q box-sizing: border-box */
+
+@media screen and (min-width: 1170px) {
+   .about-img::before {
+      content: '';
+      position: absolute;
+      border: 0.5rem solid var(--clr-primary-5);
+      width: 100%;
+      height: 100%;
+      top: -1.5rem;
+      left: -1.5rem;
+      z-index: -1;
+   }
+
+   .about-img {
+      position: relative;
+   }
+}
 
 /*
 =============== 
