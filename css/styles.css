@@ -346,12 +346,15 @@ Services
       display: flex;
       text-align: left;
    }
+
    .service-icon {
       align-self: start;
    }
+
    .service-info {
       padding-left: 1rem;
    }
+
    .service-title {
       margin-bottom: 0.5rem;
    }
