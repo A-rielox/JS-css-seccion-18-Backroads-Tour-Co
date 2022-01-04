@@ -461,6 +461,22 @@ Featured Tours
 Contact
 ===============
 */
+.contact {
+   background: var(--clr-primary-5);
+}
+
+.contact-title {
+   color: var(--clr-white);
+}
+
+.contact-title p {
+   color: var(--clr-primary-8);
+}
+
+.contact-form {
+   display: flex;
+   max-width: 28rem;
+}
 
 /*
 =============== 
