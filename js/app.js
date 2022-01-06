@@ -4,6 +4,7 @@ const date = (document.getElementById('date').innerHTML =
    new Date().getFullYear());
 
 // ********** nav toggle ************
+
 // select button and links
 const navBtn = document.getElementById('nav-toggle');
 const links = document.getElementById('nav-links');
@@ -13,6 +14,7 @@ navBtn.addEventListener('click', () => {
 });
 
 // ********** smooth scroll ************
+
 // select links
 const scrollLinks = document.querySelectorAll('.scroll-link');
 scrollLinks.forEach(link => {
